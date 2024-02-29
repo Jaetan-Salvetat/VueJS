@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Movie from "@/models/Movie";
 import {computed} from "vue";
 import Media from "@/models/Media";
 

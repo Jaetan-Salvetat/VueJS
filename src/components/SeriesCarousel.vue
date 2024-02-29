@@ -6,8 +6,6 @@ import 'swiper/css';
 
 import 'swiper/css/free-mode';
 import MediaCell from "@/components/MediaCell.vue";
-import Movie from "@/models/Movie";
-import {onBeforeRouteUpdate} from "vue-router";
 import Serie from "@/models/Serie";
 
 defineProps<{
