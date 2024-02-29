@@ -3,7 +3,7 @@ import PaginatedList from "@/networking/models/PaginatedList";
 import Movie from "@/models/Movie";
 import CreditsList from "@/networking/models/CreditsList";
 
-export default class MovieApi extends IMainApi{
+export default class MovieApi extends IMainApi {
   static async getTrending(): Promise<PaginatedList<Movie>> {
     return await this.makeRequest<PaginatedList<Movie>>(HttpMethods.get, "/trending/movie/day?language=fr-FR")
   }

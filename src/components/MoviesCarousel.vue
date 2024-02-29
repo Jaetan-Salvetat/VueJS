@@ -29,7 +29,7 @@ const modules = [FreeMode]
       class="mySwiper" >
 
       <swiper-slide v-for="movie in movies" v-bind:key="movie.id" class="carousel-content">
-        <router-link :to="`/movies/${movie.id}`">
+        <router-link :to="`/movie/${movie.id}`">
           <MediaCell :movie="movie" />
         </router-link>
       </swiper-slide>

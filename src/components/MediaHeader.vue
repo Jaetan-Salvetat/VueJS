@@ -33,7 +33,7 @@ const getVoteAsPercent = computed(() => {
 
       <div class="media-vote-container">
         <v-progress-circular :model-value="getVoteAsPercent" size="60">
-          {{ getVoteAsPercent }}%
+          {{ getVoteAsPercent.toFixed(1) }}%
         </v-progress-circular>
 
         <span class="text-button">Note des utilisateurs</span>

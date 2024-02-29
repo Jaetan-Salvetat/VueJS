@@ -3,7 +3,7 @@ import PaginatedList from "@/networking/models/PaginatedList";
 import CreditsList from "@/networking/models/CreditsList";
 import Serie from "@/models/Serie";
 
-export default class SerieApi extends IMainApi{
+export default class SerieApi extends IMainApi {
   static async getTrending(): Promise<PaginatedList<Serie>> {
     return await this.makeRequest<PaginatedList<Serie>>(HttpMethods.get, "/trending/tv/day?language=fr-FR")
   }
@@ -23,7 +23,7 @@ export default class SerieApi extends IMainApi{
   static async search(query: string): Promise<PaginatedList<Serie>> {
     return (await this.makeRequest<PaginatedList<Serie>>(
       HttpMethods.get,
-      `/search/movie?query=${query}&language=fr-FR`
+      `/search/tv?query=${query}&language=fr-FR`
     ))
   }
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {onBeforeRouteUpdate, useRoute} from "vue-router"
-import {ref} from "vue"
+import {computed, ref} from "vue"
 import MovieApi from "@/networking/MovieApi";
 import Media from "@/models/Media";
 import {MediaType} from "@/models/MediaType";
@@ -13,18 +13,24 @@ search(String(route.params.query))
 
 function search(query: string) {
   MovieApi.search(query).then(result => {
-    medias.value = result.results
-    medias.value?.sort()
-  })
-
-  SerieApi.search(query).then(result => {
-    result.results.forEach(value => {
-      medias.value?.push(value)
+    medias.value = result.results.map(value => {
+      return { ...value, mediaType: MediaType.movie }
     })
 
-    medias.value?.sort()
+    SerieApi.search(query).then(result => {
+      result.results.forEach(value => {
+        medias.value?.push({ ...value, mediaType: MediaType.tv })
+      })
+
+      medias.value?.sort()
+    })
   })
 }
+
+const getMediaType = computed(() => (type: MediaType) => {
+  if (type == MediaType.movie) return "Film"
+  else if (type == MediaType.tv) return "Série"
+})
 
 onBeforeRouteUpdate(guard => search(String(guard.params.query)))
 </script>
@@ -38,9 +44,11 @@ onBeforeRouteUpdate(guard => search(String(guard.params.query)))
           :src="`https://image.tmdb.org/t/p/w150_and_h225_bestv2/${media.backdropPath}`"  alt=""/>
 
         <div class="media-title-container">
-          <router-link :to="`/movies/${media.id}`">
-            <span class="text-subtitle-1">{{ media.title }}</span>
+          <router-link :to="`/${media.mediaType}/${media.id}`">
+            <span class="text-subtitle-1">{{ media.title ?? media.name }}</span>
           </router-link>
+
+          <span class="text-subtitle-1 text-blue-accent-1">{{ getMediaType(media.mediaType) }}</span>
           <span class="text-subtitle-1 text-medium-emphasis">{{ media.releaseDate }}</span>
           <p style="text-overflow: ellipsis" class="text-body-2 text-medium-emphasis">
             {{ media.overview }}

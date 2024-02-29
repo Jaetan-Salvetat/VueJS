@@ -31,7 +31,7 @@ const modules = [FreeMode]
       class="mySwiper" >
 
       <swiper-slide v-for="serie in series" v-bind:key="serie.id" class="carousel-content">
-        <router-link :to="`/series/${serie.id}`">
+        <router-link :to="`/tv/${serie.id}`">
           <MediaCell :movie="serie" />
         </router-link>
       </swiper-slide>

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="media-item-container mb-5 elevation-10">
+  <div class="media-item-container mb-5 elevation-7">
     <img
       width="180"
       :src="`https://image.tmdb.org/t/p/w150_and_h225_bestv2/${movie.backdropPath}`" alt=""/>

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="cast-container mb-5 elevation-10">
+  <div class="cast-container mb-5 elevation-7">
     <v-img
       style="width: 180px; height: 250px; object-fit: cover; border-radius: 8px 8px 0 0;"
       :src="`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${cast.profilePath}`"  alt=""/>
