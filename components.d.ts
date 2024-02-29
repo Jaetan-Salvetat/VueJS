@@ -12,6 +12,7 @@ declare module 'vue' {
     CastCell: typeof import('./src/components/CastCell.vue')['default']
     MediaCarousel: typeof import('./src/components/MediaCarousel.vue')['default']
     MediaCell: typeof import('./src/components/MediaCell.vue')['default']
+    MediaHeader: typeof import('./src/components/MediaHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TopBar: typeof import('./src/components/TopBar.vue')['default']

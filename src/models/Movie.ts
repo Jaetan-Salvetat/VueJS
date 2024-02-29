@@ -1,7 +1,7 @@
 import Genre from "@/models/Genre";
 import Cast from "@/models/Cast";
 
-export default interface Media {
+export default interface Movie {
   id: number
   title: string
   rating: number
@@ -11,6 +11,6 @@ export default interface Media {
   genres: [Genre]
   releaseDate:  Date
   cast: [Cast]
-  recommendations: [Media]
+  recommendations: [Movie]
   test: string
 }

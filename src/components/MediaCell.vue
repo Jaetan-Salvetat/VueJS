@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Media from "@/models/Media";
+import Movie from "@/models/Movie";
 
 defineProps<{
-  media: Media
+  movie: Movie
 }>()
 </script>
 
@@ -10,9 +10,9 @@ defineProps<{
   <div class="media-item-container mb-5 elevation-10">
     <img
       width="180"
-      :src="`https://image.tmdb.org/t/p/w150_and_h225_bestv2/${media.backdropPath}`"  alt=""/>
+      :src="`https://image.tmdb.org/t/p/w150_and_h225_bestv2/${movie.backdropPath}`" alt=""/>
 
-    <span class="text-body-2 text-center">{{ media.title }}</span>
+    <span class="text-body-2 text-center">{{ movie.title }}</span>
   </div>
 </template>
 
