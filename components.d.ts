@@ -13,8 +13,11 @@ declare module 'vue' {
     MediaCarousel: typeof import('./src/components/MediaCarousel.vue')['default']
     MediaCell: typeof import('./src/components/MediaCell.vue')['default']
     MediaHeader: typeof import('./src/components/MediaHeader.vue')['default']
+    MovieCarousel: typeof import('./src/components/MoviesCarousel.vue')['default']
+    MoviesCarousel: typeof import('./src/components/MoviesCarousel.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SeriesCarousel: typeof import('./src/components/SeriesCarousel.vue')['default']
     TopBar: typeof import('./src/components/TopBar.vue')['default']
     UserCarousel: typeof import('./src/components/UserCarousel.vue')['default']
   }

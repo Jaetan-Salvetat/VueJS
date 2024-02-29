@@ -4,7 +4,7 @@ import Movie from "@/models/Movie"
 import {ref} from "vue"
 import MovieApi from "@/networking/MovieApi"
 import CastCarousel from "@/components/CastCarousel.vue"
-import MediaCarousel from "@/components/MediaCarousel.vue"
+import MoviesCarousel from "@/components/MoviesCarousel.vue"
 import MediaHeader from "@/components/MediaHeader.vue";
 
 const route = useRoute()
@@ -27,12 +27,12 @@ onBeforeRouteUpdate(newRoute => { getMovie(Number(newRoute.params.id)) })
 
 <template>
   <div style="height: 100%" v-if="movie">
-    <MediaHeader :movie="movie" />
+    <MediaHeader :media="movie" />
 
     <main>
       <v-divider style="margin: 50px 50px" />
       <CastCarousel :casts="movie.cast" />
-      <MediaCarousel title="Recommandations" :movies="movie.recommendations" />
+      <MoviesCarousel title="Recommandations" :movies="movie.recommendations" />
     </main>
   </div>
 </template>

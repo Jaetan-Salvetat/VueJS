@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import Movie from "@/models/Movie";
 import {computed} from "vue";
+import Media from "@/models/Media";
 
 const props = defineProps<{
-  movie: Movie
+  media: Media
 }>()
 
 const getVoteAsPercent = computed(() => {
-  return (props.movie.voteAverage ?? 0) * 10
+  return (props.media.voteAverage ?? 0) * 10
 })
 </script>
 
@@ -16,16 +17,16 @@ const getVoteAsPercent = computed(() => {
     <v-img
       width="300"
       max-width="300"
-      :src="`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.backdropPath}`" />
+      :src="`https://image.tmdb.org/t/p/w300_and_h450_bestv2/${media.backdropPath}`" />
 
     <div class="media-title-container">
         <span class="text-h6">
-          {{ movie.title }}
-          <span>• {{ movie.releaseDate }}</span>
+          {{ media.title }}
+          <span>• {{ media.releaseDate }}</span>
         </span>
 
       <div class="media-genres-container">
-          <span v-for="genre in movie.genres" v-bind:key="genre.id" class="media-genre-item bg-blue-accent-1">
+          <span v-for="genre in media.genres" v-bind:key="genre.id" class="media-genre-item bg-blue-accent-1">
           {{ genre.name }}
         </span>
       </div>
@@ -38,7 +39,7 @@ const getVoteAsPercent = computed(() => {
         <span class="text-button">Note des utilisateurs</span>
       </div>
 
-      <p>{{ movie.overview }}</p>
+      <p>{{ media.overview }}</p>
     </div>
   </header>
 </template>

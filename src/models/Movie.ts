@@ -1,16 +1,9 @@
 import Genre from "@/models/Genre";
 import Cast from "@/models/Cast";
+import Media from "@/models/Media";
 
-export default interface Movie {
-  id: number
-  title: string
+export default interface Movie extends Media {
   rating: number
-  backdropPath: string
-  voteAverage: number
-  overview: string
-  genres: [Genre]
-  releaseDate:  Date
   cast: [Cast]
   recommendations: [Movie]
-  test: string
 }

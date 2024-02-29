@@ -8,17 +8,18 @@ import 'swiper/css/free-mode';
 import MediaCell from "@/components/MediaCell.vue";
 import Movie from "@/models/Movie";
 import {onBeforeRouteUpdate} from "vue-router";
+import Serie from "@/models/Serie";
 
 defineProps<{
   title: string,
-  movies: [Movie]
+  series: [Serie]
 }>()
 
 const modules = [FreeMode]
 </script>
 
 <template>
-  <div class="carousel-container" v-if="movies.length">
+  <div class="carousel-container" v-if="series.length">
     <h2 class="text-h6 carousel-title">{{ title }}</h2>
 
     <swiper
@@ -29,9 +30,9 @@ const modules = [FreeMode]
       :pagination="{ type: 'progressbar' }"
       class="mySwiper" >
 
-      <swiper-slide v-for="movie in movies" v-bind:key="movie.id" class="carousel-content">
-        <router-link :to="`/movies/${movie.id}`">
-          <MediaCell :movie="movie" />
+      <swiper-slide v-for="serie in series" v-bind:key="serie.id" class="carousel-content">
+        <router-link :to="`/series/${serie.id}`">
+          <MediaCell :movie="serie" />
         </router-link>
       </swiper-slide>
 

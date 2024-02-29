@@ -42,6 +42,7 @@ declare module 'vue-router/auto/routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/movies/[id]': RouteRecordInfo<'/movies/[id]', '/movies/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/search/[query]': RouteRecordInfo<'/search/[query]', '/search/:query', { query: ParamValue<true> }, { query: ParamValue<false> }>,
+    '/series/[id]': RouteRecordInfo<'/series/[id]', '/series/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
   }
 }
 
