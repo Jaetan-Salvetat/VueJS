@@ -1,0 +1,26 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// https://vuetifyjs.com/features/sass-variables/`
+// @use 'vuetify/settings' with (
+//   $color-pack: false
+// );
+a:link {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+a:visited {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+a:hover {
+  text-decoration: none;
+  color: var(--on-surface);
+}
+a:active {
+  text-decoration: none;
+  color: var(--on-surface);
+}
