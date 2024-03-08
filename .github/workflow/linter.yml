@@ -1,0 +1,14 @@
+on: push
+name: Create Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: tests
+        run: npm run lint
