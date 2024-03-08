@@ -1,4 +1,4 @@
-name: Create Release
+name: Linter
 on: push
 
 jobs:
@@ -13,5 +13,9 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: tests
-        run: npm run lint
+      - name: Run linter
+      - uses: sibiraj-s/action-eslint@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          eslint-args: --ignore-path=.gitignore --quiet
+          annotations: true
