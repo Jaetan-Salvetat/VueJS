@@ -1,0 +1,17 @@
+name: Linter
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Setup
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: npm install
+        run: npm ci
+
+      - name: tests
+        run: npm run lint
